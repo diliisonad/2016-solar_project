@@ -33,35 +33,46 @@ def parse_star_parameters(line, star):
     """Считывает данные о звезде из строки.
     Входная строка должна иметь слеюущий формат:
     Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
     Здесь (x, y) — координаты зведы, (Vx, Vy) — скорость.
     Пример строки:
     Star 10 red 1000 1 2 3 4
-
     Параметры:
-
     **line** — строка с описание звезды.
     **star** — объект звезды.
     """
 
-    pass  # FIXME: not done yet
+    star_parameters = [str(i) for i in line.split()]
+    star.type = star_parameters[0]
+    star.R = int(float(star_parameters[1]))
+    star.color = star_parameters[2]
+    star.m = int(float(star_parameters[3]))
+    star.x = int(float(star_parameters[4]))
+    star.y = int(float(star_parameters[5]))
+    star.Vx = int(float(star_parameters[6]))
+    star.Vy = int(float(star_parameters[7]))
+
 
 def parse_planet_parameters(line, planet):
     """Считывает данные о планете из строки.
     Предполагается такая строка:
     Входная строка должна иметь слеюущий формат:
     Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
     Здесь (x, y) — координаты планеты, (Vx, Vy) — скорость.
     Пример строки:
     Planet 10 red 1000 1 2 3 4
-
     Параметры:
-
     **line** — строка с описание планеты.
     **planet** — объект планеты.
     """
-    pass  # FIXME: not done yet...
+    planet_parameters = [str(i) for i in line.split()]
+    planet.type = planet_parameters[0]
+    planet.R = int(float(planet_parameters[1]))
+    planet.color = planet_parameters[2]
+    planet.m = int(float(planet_parameters[3]))
+    planet.x = int(float(planet_parameters[4]))
+    planet.y = int(float(planet_parameters[5]))
+    planet.Vx = int(float(planet_parameters[6]))
+    planet.Vy = int(float(planet_parameters[7]))
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
