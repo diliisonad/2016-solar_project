@@ -33,9 +33,7 @@ def scale_x(x):
     Принимает вещественное число, возвращает целое число.
     В случае выхода **x** координаты за пределы экрана возвращает
     координату, лежащую за пределами холста.
-
     Параметры:
-
     **x** — x-координата модели.
     """
 
@@ -54,11 +52,10 @@ def scale_y(y):
 
     return -int(y*scale_factor) + window_height//2
 
+
 def create_star_image(space, star):
     """Создаёт отображаемый объект звезды.
-
     Параметры:
-
     **space** — холст для рисования.
     **star** — объект звезды.
     """
@@ -81,13 +78,10 @@ def create_planet_image(space, planet):
     planet.image = space.create_oval([x - r, y - r], [x + r, y + r], fill=planet.color)
 
 
-
 def update_system_name(space, system_name):
     """Создаёт на холсте текст с названием системы небесных тел.
     Если текст уже был, обновляет его содержание.
-
     Параметры:
-
     **space** — холст для рисования.
     **system_name** — название системы тел.
     """
@@ -96,9 +90,7 @@ def update_system_name(space, system_name):
 
 def update_object_position(space, body):
     """Перемещает отображаемый объект на холсте.
-
     Параметры:
-
     **space** — холст для рисования.
     **body** — тело, которое нужно переместить.
     """
